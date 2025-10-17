@@ -66,7 +66,8 @@ const Footer = () => {
                 {/* Bottom Copyright Line */}
                 <div className="border-t border-slate-800 mt-12 pt-8 text-center">
                     <p className="text-slate-500 text-sm">
-                        &copy; {new Date().getFullYear()} Ismail Khan Refat. All Rights Reserved.
+                        &copy; {new Date().getFullYear()} Ismail Khan Refat. All Rights Reserved.{" "}
+                        <span className="text-emerald-400">💚</span>
                     </p>
                 </div>
             </div>
