@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import {
     SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNextdotjs,
     SiTailwindcss, SiBootstrap, SiExpress, SiMongodb, SiMongoose,
-    SiFirebase, SiGit, SiC, SiCplusplus, SiPostgresql, SiRedux
+    SiFirebase, SiGit, SiC, SiCplusplus, SiPostgresql, SiRedux, SiMysql
 } from 'react-icons/si';
 import { Pencil } from 'lucide-react';
 
@@ -16,15 +16,13 @@ const Skills = () => {
         { name: 'Tailwind', icon: <SiTailwindcss className="text-cyan-400" size={20} />, category: 'Frontend' },
         { name: 'Bootstrap', icon: <SiBootstrap className="text-purple-600" size={20} />, category: 'Frontend' },
         { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400" size={20} />, category: 'Frontend' },
-        { name: 'TypeScript', icon: <SiTypescript className="text-blue-600" size={20} />, category: 'Frontend' },
         { name: 'React.js', icon: <SiReact className="text-cyan-400" size={20} />, category: 'Frontend' },
         { name: 'Next.js', icon: <SiNextdotjs size={20} />, category: 'Frontend' },
-        { name: 'Redux', icon: <SiRedux className="text-purple-500" size={20} />, category: 'Frontend' },
         { name: 'Express', icon: <SiExpress size={20} />, category: 'Backend' },
         { name: 'MongoDB', icon: <SiMongodb className="text-green-500" size={20} />, category: 'Backend' },
         { name: 'Mongoose', icon: <SiMongoose className="text-red-700" size={20} />, category: 'Backend' },
         { name: 'Firebase', icon: <SiFirebase className="text-yellow-500" size={20} />, category: 'Backend' },
-        { name: 'Postgresql', icon: <SiPostgresql className="text-blue-700" size={20} />, category: 'Backend' },
+        { name: 'MySQL', icon: <SiMysql className="text-sky-500" size={20} />, category: 'Backend' },
         { name: 'Git', icon: <SiGit className="text-orange-600" size={20} />, category: 'Tools' },
         { name: 'C', icon: <SiC className="text-blue-600" size={20} />, category: 'Tools' },
         { name: 'C++', icon: <SiCplusplus className="text-blue-700" size={20} />, category: 'Tools' },

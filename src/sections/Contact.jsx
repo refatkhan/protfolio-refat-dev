@@ -117,8 +117,8 @@ const Contact = () => {
                             <InfoCard icon={<FiMail size={22} />} title="Email" text="refatkhan.dev@gmail.com" link="mailto:refatkhan.dev@gmail.com" cta="Send an Email" />
                             <InfoCard icon={<FiPhone size={22} />} title="Phone" text="+880 1904-773224" link="tel:+8801904773224" cta="Call Me" />
                             <InfoCard icon={<FaTelegramPlane size={22} />} title="Telegram" text="@refatkhan0" link="https://t.me/refatkhan0" cta="Message on Telegram" />
-                            <InfoCard icon={<FaMicrosoft size={22} />} title="Microsoft Teams" text="ismailkhan.refat@outlook.com" link="#" cta="Connect on Teams" />
-                            <InfoCard icon={<FiMapPin size={22} />} title="Location" text="Dhaka, Bangladesh" link="#" cta="View on Map" />
+                            <InfoCard icon={<FaMicrosoft size={22} />} title="Microsoft Teams" text="refatkhan807@gmail.com" link="#" cta="Connect on Teams" />
+                            <InfoCard icon={<FiMapPin size={22} />} title="Location" text="Dhaka, Bangladesh" link="https://maps.app.goo.gl/DoauaYiEKAnq2aCn7" cta="View on Map" />
                         </div>
                     </Section>
 
