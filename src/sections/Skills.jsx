@@ -53,7 +53,7 @@ const Skills = () => {
     };
 
     return (
-        <div className="bg-[#0c0c0c] w-full flex items-center justify-center font-sans p-4 relative overflow-hidden py-24">
+        <section id="skills" className="bg-[#0c0c0c] w-full flex items-center justify-center font-sans p-4 relative overflow-hidden py-24">
             <div className="absolute inset-0 bg-[radial-gradient(#222_1px,transparent_1px)] [background-size:20px_20px] opacity-50"></div>
             <div className="w-full max-w-4xl mx-auto z-10">
 
@@ -118,7 +118,7 @@ const Skills = () => {
                     </AnimatePresence>
                 </motion.div>
             </div>
-        </div>
+        </section>
     );
 };
 
