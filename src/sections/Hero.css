@@ -12,27 +12,35 @@
 }
 
 .p-hero-subtitle {
-  /* To apply gradient on text, background-clip: text is essential */
   background: linear-gradient(
-    to right,
-    #8e44ad,
-    #3498db,
-    #1abc9c,
-    #f1c40f,
-    #e67e22,
-    #e74c3c,
-    #8e44ad
+    90deg,
+    #0d9488, /* Teal-800 - A deep, complementary green */
+    #34d399, /* Emerald-400 - Your primary accent color */
+    #22d3ee, /* Cyan-400 - A bright, energetic highlight */
+    #34d399, /* Emerald-400 - Returning to the primary accent */
+    #0d9488  /* Teal-800 - Fading back to the deep green */
   );
+  background-size: 300% 300%;
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
-  animation: scroll-gradient 20s linear infinite;
-  /* Adjust duration as needed */
-  display: inline-block;
-  /* Important for animation to work with gradient */
-  padding-right: 2rem;
-  /* Small gap for continuous loop */
+  -webkit-text-fill-color: transparent;
+
+  animation: flow-gradient 8s ease-in-out infinite;
 }
+
+@keyframes flow-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
 
 /* Keyframes for the continuous scrolling effect */
 @keyframes scroll-gradient {
