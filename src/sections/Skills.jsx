@@ -1,3 +1,4 @@
+import { motion, AnimatePresence } from "framer-motion";
 import React, { useState } from 'react';
 import {
     SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNextdotjs,
@@ -6,7 +7,7 @@ import {
 } from 'react-icons/si';
 import { Pencil } from 'lucide-react';
 
-// Main App Component
+// Main Skills Component
 const Skills = () => {
     // Data for skills, including name, icon, and category
     const skills = [
@@ -29,44 +30,58 @@ const Skills = () => {
         { name: 'C++', icon: <SiCplusplus className="text-blue-700" size={20} />, category: 'Tools' },
     ];
 
-    // Categories for filtering
     const categories = ['All', 'Frontend', 'Backend', 'Tools'];
-
-    // State to keep track of the active category
     const [activeCategory, setActiveCategory] = useState('All');
+    const filteredSkills = skills.filter(skill => activeCategory === 'All' || skill.category === activeCategory);
 
-    // Filter skills based on the active category
-    const filteredSkills = skills.filter(skill =>
-        activeCategory === 'All' || skill.category === activeCategory
-    );
+    // Animation variants for the container of the skills grid
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1, // Stagger the animation of children
+            },
+        },
+    };
+
+    // Animation variants for each individual skill item
+    const itemVariants = {
+        hidden: { y: 20, opacity: 0 },
+        visible: { y: 0, opacity: 1 },
+        exit: { y: -20, opacity: 0 } // Define exit animation
+    };
 
     return (
-        <div className="bg-[#0c0c0c] min-h-screen w-full flex items-center justify-center font-sans p-4 relative overflow-hidden">
-            {/* Background dot pattern */}
+        <div className="bg-[#0c0c0c] w-full flex items-center justify-center font-sans p-4 relative overflow-hidden py-24">
             <div className="absolute inset-0 bg-[radial-gradient(#222_1px,transparent_1px)] [background-size:20px_20px] opacity-50"></div>
-
             <div className="w-full max-w-4xl mx-auto z-10">
-                {/* Top skills tag */}
-                <div className="flex items-center gap-2 mb-4">
-                    <div className="bg-gray-800 border border-gray-700 rounded-md p-1.5 inline-flex">
-                        <Pencil size={16} className="text-gray-400" />
+
+                {/* Animate the heading */}
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 0.6 }}
+                >
+                    <div className="flex items-center gap-2 mb-4">
+                        <div className="bg-gray-800 border border-gray-700 rounded-md p-1.5 inline-flex">
+                            <Pencil size={16} className="text-gray-400" />
+                        </div>
+                        <p className="text-gray-400 text-sm font-medium tracking-wider">SKILLS</p>
                     </div>
-                    <p className="text-gray-400 text-sm font-medium tracking-wider">SKILLS</p>
-                </div>
+                    <h1 className="text-5xl md:text-6xl font-bold text-white mb-8">
+                        My <span className="text-emerald-400">Skills</span>
+                    </h1>
+                </motion.div>
 
-                {/* Main title */}
-                <h1 className="text-5xl md:text-6xl font-bold text-white mb-8">
-                    My <span className="text-emerald-400">Skills</span>
-                </h1>
-
-                {/* Filter buttons */}
                 <div className="flex flex-wrap gap-3 mb-10">
                     {categories.map(category => (
                         <button
                             key={category}
                             onClick={() => setActiveCategory(category)}
                             className={`px-5 py-2 text-sm rounded-full transition-all duration-300 ease-in-out font-medium
-                ${activeCategory === category
+                                ${activeCategory === category
                                     ? 'bg-emerald-400 text-black shadow-[0_0_20px_rgba(52,211,153,0.6)]'
                                     : 'bg-gray-800/60 border border-gray-700 text-gray-300 hover:bg-gray-700/80'
                                 }`}
@@ -76,23 +91,35 @@ const Skills = () => {
                     ))}
                 </div>
 
-                {/* Skills grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                    {filteredSkills.map(skill => (
-                        <div
-                            key={skill.name}
-                            className="flex items-center justify-center sm:justify-start gap-3 bg-gray-800/60 border border-gray-700 rounded-full px-4 py-2.5 cursor-pointer
-                         hover:bg-gray-700/80 transition-colors duration-300"
-                        >
-                            {skill.icon}
-                            <span className="text-gray-200 text-sm font-medium">{skill.name}</span>
-                        </div>
-                    ))}
-                </div>
+                {/* Animate the grid container */}
+                <motion.div
+                    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                >
+                    {/* AnimatePresence handles the enter/exit animations of items */}
+                    <AnimatePresence>
+                        {filteredSkills.map(skill => (
+                            <motion.div
+                                key={skill.name}
+                                variants={itemVariants}
+                                initial="hidden"
+                                animate="visible"
+                                exit="exit"
+                                layout // Animate layout changes
+                                className="flex items-center justify-center sm:justify-start gap-3 bg-gray-800/60 border border-gray-700 rounded-full px-4 py-2.5 cursor-pointer hover:bg-gray-700/80 hover:border-emerald-400 transition-colors duration-300"
+                            >
+                                {skill.icon}
+                                <span className="text-gray-200 text-sm font-medium">{skill.name}</span>
+                            </motion.div>
+                        ))}
+                    </AnimatePresence>
+                </motion.div>
             </div>
         </div>
     );
 };
 
 export default Skills;
-
