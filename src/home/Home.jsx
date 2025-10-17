@@ -5,6 +5,7 @@ import Projects from '../sections/Projects';
 import Navbar from '../components/Navbar';
 import Footer from '../sections/Footer';
 import Skills from '../sections/Skills';
+import Education from '../sections/Education';
 
 const Home = () => {
     return (
@@ -20,6 +21,7 @@ const Home = () => {
                     <About />
                     <Projects />
                     <Skills />
+                    <Education/>
                 </main>
                 <Footer />
             </div>
