@@ -49,7 +49,7 @@ const Hero = () => {
             <Particles id="tsparticles" init={loadFull} options={particlesOptions} className="absolute inset-0 -z-10" />
 
             {/* Main container for layout */}
-            <div className="relative z-10 w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-16">
+            <div className="relative z-10 w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-12 md:gap-16">
 
                 {/* Image Container (Left Column) */}
                 <motion.div
@@ -74,9 +74,11 @@ const Hero = () => {
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 min-h-[120px] md:min-h-[140px] w-full">
                         <TypeAnimation
                             sequence={[
-                                "Hi, I’m Refat Khan", 2000,
+                                "Hi, I’m Ismail Khan Refat", 2000,
                                 "I build things for the web.", 2000,
                                 "I'm a MERN Stack Developer.", 2000,
+                                "I'm a MERN Stack Developer.", 2000,
+
                             ]}
                             wrapper="span"
                             speed={50}
