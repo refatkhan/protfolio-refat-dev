@@ -8,9 +8,33 @@ const HouseIcon = () => <svg width="24" height="24" viewBox="0 0 24 24" fill="no
 const FoodIcon = () => <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e5e7eb" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12a10 10 0 1 0 20 0 10 10 0 1 0-20 0Z"></path><path d="M6 12c0-1.7 1.3-3 3-3s3 1.3 3 3-1.3 3-3 3-3-1.3-3-3Z"></path><path d="M15 12c0-1.7 1.3-3 3-3s3 1.3 3 3-1.3 3-3 3-3-1.3-3-3Z"></path></svg>;
 
 const projectsData = [
-    { name: "Medical Camp Management", imageSrc: "https://placehold.co/600x400/0f172a/34d399?text=Medical+Camp", icon: <MedicalIcon />, description: "A platform for managing medical camps, handling patient registration, scheduling, and inventory.", techStack: ["React", "Node.js", "MongoDB", "JWT"], link: "#" },
-    { name: "Roommate Finder (sharenest)", imageSrc: "https://placehold.co/600x400/0f172a/34d399?text=ShareNest", icon: <HouseIcon />, description: "Connecting users to find compatible roommates based on lifestyle, preferences, and location.", techStack: ["Next.js", "Firebase", "TailwindCSS"], link: "#" },
-    { name: "FoodSharing Platform", imageSrc: "https://placehold.co/600x400/0f172a/34d399?text=FoodSharing", icon: <FoodIcon />, description: "A community platform to reduce food waste by connecting surplus food to local charities.", techStack: ["React", "Redux", "Express", "PostgreSQL"], link: "#" }
+    {
+        name: "Medical Camp Management",
+        imageSrc: "https://i.ibb.co.com/8gHtsBWM/medical-camp.png",
+        icon: <MedicalIcon />,
+        description: "A Role based platform for managing medical camps, handling patient registration, scheduling, and inventory.",
+        techStack: ["React", "Node.js", "MongoDB", "JWT", "Firebase", "Express"],
+        link: "https://medical-camp-37f24.web.app/"
+    },
+    {
+        name: "Roommate Finder (ShareNest)",
+        //imageSrc: "https://placehold.co/600x400/0f172a/34d399?text=ShareNest",
+        imageSrc: "https://i.ibb.co.com/mVq6fs1S/roommate-finder.png",
+        icon: <HouseIcon />,
+        description: "Connecting users to find compatible roommates based on lifestyle, preferences, and location.",
+        techStack: ["React", "Firebase", "Express", "MongoDB", "Node js"
+        ],
+        link: "https://roommate-finder0.web.app/"
+    },
+    {
+        name: "FoodSharing Platform",
+        imageSrc: "https://i.ibb.co.com/7xJFDD87/foodshare.png",
+        //imageSrc: "https://placehold.co/600x400/0f172a/34d399?text=FoodSharing",
+        icon: <FoodIcon />,
+        description: "A community platform to reduce food waste by connecting surplus food to local charities.",
+        techStack: ["React", "Firebase", "Express", "MongoDB", "Node js"],
+        link: "https://food-sharing-2fa12.web.app/"
+    }
 ];
 
 const cardVariants = {
@@ -47,7 +71,7 @@ const ChromaProjectCard = ({ project }) => {
 const ComingSoonCard = ({ scrollYProgress }) => {
     // Map the scroll progress (0 to 1) to a vertical movement (-50px to 50px)
     const y = useTransform(scrollYProgress, [0, 1], [-50, 50]);
-    
+
     return (
         <motion.div
             className="md:col-span-2 lg:col-span-3 mt-12 bg-slate-900/60 p-8 rounded-xl border border-slate-800 flex flex-col items-center justify-center text-center"
@@ -104,7 +128,7 @@ const Projects = () => {
                         <ChromaProjectCard key={index} project={project} />
                     ))}
                 </motion.div>
-                
+
                 {/* Render the new parallax card, passing the scroll progress to it */}
                 <ComingSoonCard scrollYProgress={scrollYProgress} />
             </div>

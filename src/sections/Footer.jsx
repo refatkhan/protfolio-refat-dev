@@ -9,10 +9,9 @@ const Footer = () => {
         { name: 'Projects', href: '#projects' },
         { name: 'Contact', href: '#contact' },
     ];
-
     const socialLinks = [
-        { icon: <FaGithub size={20} />, href: '#' },
-        { icon: <FaLinkedinIn size={20} />, href: '#' },
+        { icon: <FaGithub size={20} />, href: 'https://github.com/refatkhan' },
+        { icon: <FaLinkedinIn size={20} />, href: 'https://www.linkedin.com/in/refatkhan/' },
     ];
 
     const scrollToTop = () => {
