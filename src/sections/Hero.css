@@ -1,0 +1,47 @@
+/* Hero.css */
+
+.p-hero-subtitle-container {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    white 10%,
+    white 90%,
+    transparent
+  );
+  /* Ensures gradient fades out at edges */
+}
+
+.p-hero-subtitle {
+  /* To apply gradient on text, background-clip: text is essential */
+  background: linear-gradient(
+    to right,
+    #8e44ad,
+    #3498db,
+    #1abc9c,
+    #f1c40f,
+    #e67e22,
+    #e74c3c,
+    #8e44ad
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: scroll-gradient 20s linear infinite;
+  /* Adjust duration as needed */
+  display: inline-block;
+  /* Important for animation to work with gradient */
+  padding-right: 2rem;
+  /* Small gap for continuous loop */
+}
+
+/* Keyframes for the continuous scrolling effect */
+@keyframes scroll-gradient {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+    /* Scrolls half the content width */
+  }
+}
