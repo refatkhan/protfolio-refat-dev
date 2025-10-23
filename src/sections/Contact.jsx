@@ -85,7 +85,7 @@ const Contact = () => {
 
     return (
         <section id="contact" className="py-20 md:py-32">
-            <div className="container mx-auto px-6 max-w-5xl">
+            <div className="container mx-auto px-6 max-w-6xl">
 
                 {/* Header */}
                 <motion.div

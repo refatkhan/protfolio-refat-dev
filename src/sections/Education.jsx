@@ -67,7 +67,7 @@ const TimelineItem = ({ data }) => {
 const Education = () => {
     return (
         <section id="education" className="py-20 md:py-32">
-            <div className="container mx-auto px-6 max-w-4xl">
+            <div className="container mx-auto px-6 max-w-6xl">
                 {/* Header animation remains the same */}
                 <motion.div
                     initial={{ opacity: 0, y: -30 }}
