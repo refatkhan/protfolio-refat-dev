@@ -1,4 +1,4 @@
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { useMemo, useEffect, useState } from "react";
@@ -42,18 +42,20 @@ const Hero = () => {
 
     const [showScroll, setShowScroll] = useState(true);
 
-    // Hide scroll button after user scrolls down
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 50) setShowScroll(false);
-            else setShowScroll(true);
+            setShowScroll(window.scrollY < 50);
         };
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     return (
-        <section id="home" className="relative flex flex-col justify-center items-center text-slate-100 h-screen overflow-hidden">
+        <section
+            id="home"
+            className="relative flex flex-col justify-center items-center text-slate-100 h-screen overflow-hidden
+             pt-16 md:pt-0"
+        >
             <Helmet>
                 <title>Ismail Khan Refat | Portfolio</title>
                 <meta name="description" content="Frontend Developer | React | MERN Stack | Passionate about building clean, interactive UI." />
@@ -63,9 +65,31 @@ const Hero = () => {
 
             <div className="relative z-10 w-full max-w-6xl px-6 grid grid-cols-1 md:grid-cols-2 items-center gap-12 md:gap-16 h-full">
 
-                {/* Left Column */}
+                {/* Right Column - Image on Mobile First */}
                 <motion.div
-                    className="flex flex-col items-center text-center md:items-start md:text-left"
+                    className="flex justify-center md:justify-end order-1 md:order-2 mb-8 md:mb-0"
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                >
+                    <div className="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
+                        <div className="absolute inset-0 rounded-full p-1 bg-gradient-to-r from-emerald-400 via-cyan-400 to-violet-400 animate-spin-slow">
+                            <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center">
+                                <div className="w-[90%] h-[90%] rounded-full overflow-hidden shadow-lg animate-bounce-slow">
+                                    <img
+                                        src={img}
+                                        alt="Ismail Khan Refat"
+                                        className="w-full h-full object-cover rounded-full"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
+
+                {/* Left Column - Text */}
+                <motion.div
+                    className="flex flex-col items-center text-center md:items-start md:text-left order-2 md:order-1"
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
@@ -130,28 +154,6 @@ const Hero = () => {
                         <SocialIcon href="https://linkedin.com/in/refatkhan">
                             <FaLinkedinIn className="w-7 h-7" />
                         </SocialIcon>
-                    </div>
-                </motion.div>
-
-                {/* Right Column */}
-                <motion.div
-                    className="flex justify-center md:justify-end"
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                >
-                    <div className="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center">
-                        <div className="absolute inset-0 rounded-full p-1 bg-gradient-to-r from-emerald-400 via-cyan-400 to-violet-400 animate-spin-slow">
-                            <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center">
-                                <div className="w-[90%] h-[90%] rounded-full overflow-hidden shadow-lg animate-bounce-slow">
-                                    <img
-                                        src={img}
-                                        alt="Ismail Khan Refat"
-                                        className="w-full h-full object-cover rounded-full"
-                                    />
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </motion.div>
             </div>
