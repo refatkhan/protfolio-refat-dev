@@ -5,17 +5,8 @@ import { Menu, X } from "lucide-react";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
-  // Effect to detect scroll and apply a background to the navbar
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Updated navLinks for a single-page application
   const navLinks = [
     { name: "About", path: "#about" },
     { name: "Skills", path: "#skills" },
@@ -24,34 +15,58 @@ const Navbar = () => {
     { name: "Contact", path: "#contact" },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+      let currentSection = "";
+      navLinks.forEach(link => {
+        const sectionId = link.path.substring(1);
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            currentSection = link.path;
+          }
+        }
+      });
+      if (window.scrollY < 200) {
+        currentSection = "";
+      }
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+        currentSection = navLinks[navLinks.length - 1].path;
+      }
+      setActiveSection(currentSection);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [navLinks]);
+
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 
             ${isScrolled ? 'bg-slate-900/80 backdrop-blur-md border-b border-slate-800' : 'bg-transparent'}`}
     >
-      <div className="container mx-auto flex justify-between items-center px-6 py-4">
+      {/* THIS IS THE UPDATED LINE */}
+      <div className="container mx-auto max-w-6xl flex justify-between items-center px-6 py-4">
         {/* Logo */}
         <a href="#" className="text-2xl font-bold text-emerald-400">
           Dev<span className="text-slate-100">Refat</span>
         </a>
+
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-4">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.path}
-              className="text-slate-300 hover:text-emerald-400 transition-colors font-medium"
+              className={`px-4 py-2 rounded-md transition-all duration-300 font-medium
+                                ${activeSection === link.path
+                  ? 'bg-emerald-400 text-black' // Active style
+                  : 'text-slate-300 hover:text-emerald-400' // Inactive style
+                }`}
             >
               {link.name}
             </a>
           ))}
-          <motion.a
-            href="#contact"
-            className="bg-emerald-400 text-black font-semibold px-4 py-2 rounded-md"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Hire Me
-          </motion.a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -63,7 +78,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu using AnimatePresence for smooth open/close */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -71,27 +86,22 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden absolute top-0 left-0 w-full h-screen bg-slate-900 flex flex-col items-center justify-center gap-8"
+            className="md:hidden absolute top-0 left-0 w-full h-screen bg-slate-900 flex flex-col items-center justify-center gap-6"
           >
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.path}
                 onClick={() => setIsOpen(false)}
-                className="text-2xl text-slate-200 hover:text-emerald-400 transition-colors"
+                className={`text-2xl px-6 py-3 rounded-md transition-all duration-300
+                                    ${activeSection === link.path
+                    ? 'bg-emerald-400 text-black font-semibold'
+                    : 'text-slate-200 hover:text-emerald-400'
+                  }`}
               >
                 {link.name}
               </a>
             ))}
-            <motion.a
-              href="#contact"
-              onClick={() => setIsOpen(false)}
-              className="bg-emerald-400 text-black font-semibold px-6 py-3 rounded-md text-lg mt-4"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Hire Me
-            </motion.a>
           </motion.div>
         )}
       </AnimatePresence>
@@ -100,3 +110,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
