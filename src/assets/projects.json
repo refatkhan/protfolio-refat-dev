@@ -1,0 +1,81 @@
+[
+  {
+    "id": "medical-camp",
+    "name": "Medical Camp Management",
+    "imageSrc": "https://i.ibb.co/8gHtsBWM/medical-camp.png",
+    "fallbackImage": "https://placehold.co/600x400/0f172a/34d399?text=Medical+Camp",
+    "icon": "MedicalIcon",
+    "shortDescription": "A Role based platform for managing medical camps, handling patient registration, scheduling, and inventory.",
+    "longDescription": "This full-stack application provides a comprehensive solution for organizing and executing medical camps efficiently. It features role-based access control for administrators, doctors, and volunteers. Key functionalities include patient registration with unique IDs, appointment scheduling, inventory tracking for medical supplies, and basic reporting.",
+    "features": [
+      "Role-Based Authentication (Admin, Doctor, Volunteer)",
+      "Patient Registration and Management",
+      "Camp Scheduling and Logistics",
+      "Medical Supply Inventory Tracking",
+      "Appointment Booking System"
+    ],
+    "techStack": [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "JWT",
+      "Firebase",
+      "Express",
+      "TailwindCSS"
+    ],
+    "liveLink": "https://medical-camp-37f24.web.app/",
+    "githubLink": "https://github.com/refatkhan/medi-client"
+  },
+  {
+    "id": "sharenest",
+    "name": "Roommate Finder (ShareNest)",
+    "imageSrc": "https://i.ibb.co/mVq6fs1S/roommate-finder.png",
+    "fallbackImage": "https://placehold.co/600x400/0f172a/34d399?text=ShareNest",
+    "icon": "HouseIcon",
+    "shortDescription": "Connecting users to find compatible roommates based on lifestyle, preferences, and location.",
+    "longDescription": "ShareNest aims to simplify the process of finding the perfect roommate. Users can create detailed profiles outlining their living habits, preferences, and requirements. The platform uses a matching algorithm to suggest compatible roommates and includes features like property listings and secure in-app messaging.",
+    "features": [
+      "User Profile Creation (Lifestyle, Preferences)",
+      "Compatibility Matching Algorithm",
+      "Property/Room Listing Feature",
+      "Secure In-App Messaging",
+      "Search Filters (Location, Budget, etc.)"
+    ],
+    "techStack": [
+      "React",
+      "Firebase",
+      "Express",
+      "MongoDB",
+      "Node js",
+      "TailwindCSS"
+    ],
+    "liveLink": "https://roommate-finder0.web.app/",
+    "githubLink": "https://github.com/refatkhan/roommate-find-client"
+  },
+  {
+    "id": "food-sharing",
+    "name": "FoodSharing Platform",
+    "imageSrc": "https://i.ibb.co/7xJFDD87/foodshare.png",
+    "fallbackImage": "https://placehold.co/600x400/0f172a/34d399?text=FoodSharing",
+    "icon": "FoodIcon",
+    "shortDescription": "A community platform to reduce food waste by connecting surplus food to local charities.",
+    "longDescription": "This platform addresses food waste by creating a bridge between those with surplus food (restaurants, individuals) and those in need (charities, food banks). Users can post available food items with details like quantity and expiry date. Organizations can then browse listings and arrange for collection, facilitated by location-based searching.",
+    "features": [
+      "Food Listing Creation (Surplus Food Details)",
+      "Organization Registration and Verification",
+      "Location-Based Search for Available Food",
+      "Collection Arrangement System",
+      "User Rating/Feedback System"
+    ],
+    "techStack": [
+      "React",
+      "Firebase",
+      "Express",
+      "MongoDB",
+      "Node js",
+      "TailwindCSS"
+    ],
+    "liveLink": "https://food-sharing-2fa12.web.app/",
+    "githubLink": "https://github.com/refatkhan/food-sharing-client"
+  }
+]
