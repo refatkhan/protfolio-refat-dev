@@ -135,7 +135,7 @@ const Hero = () => {
                             <span>Browse Projects</span>
                         </motion.a>
                         <motion.a
-                            href="/src/assets/resume_of_Ismail_Khan_Refat.pdf"
+                            href="/resume_of_Ismail_Khan_Refat.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.05 }}
@@ -143,7 +143,7 @@ const Hero = () => {
                             className="flex items-center space-x-2 border border-slate-500 text-slate-300 font-medium px-6 py-3 rounded-md hover:bg-slate-800 hover:text-white transition-all"
                         >
                             <FaDownload className="text-xl" />
-                            <span>Download Resume</span>
+                            <span>View Resume</span>
                         </motion.a>
                     </div>
 
