@@ -135,7 +135,7 @@ const Hero = () => {
                             <span>Browse Projects</span>
                         </motion.a>
                         <motion.a
-                            href="/resume.pdf"
+                            href="/src/assets/resume_of_Ismail_Khan_Refat.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.05 }}
