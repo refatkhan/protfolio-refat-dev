@@ -143,7 +143,7 @@ const Hero = () => {
                             className="flex items-center space-x-2 border border-slate-500 text-slate-300 font-medium px-6 py-3 rounded-md hover:bg-slate-800 hover:text-white transition-all"
                         >
                             <FaDownload className="text-xl" />
-                            <span>Download CV</span>
+                            <span>Download Resume</span>
                         </motion.a>
                     </div>
 
