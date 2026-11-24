@@ -53,7 +53,10 @@ const About = () => {
               Engineering &amp; Research
             </h3>
             <p className="text-slate-400 leading-relaxed">
-              As a Computer Science undergraduate at Daffodil International University, I build scalable full-stack applications with React, Next.js, Node.js, and FastAPI alongside deep learning research in medical imaging.
+              As a Computer Science undergraduate at Daffodil International
+              University, I build full-stack web applications with React,
+              Next.js, TypeScript, Node.js, and FastAPI alongside deep learning
+              research in medical imaging.
             </p>
           </motion.div>
 
@@ -69,11 +72,14 @@ const About = () => {
               What I Love to Build
             </h3>
             <p className="text-slate-400 leading-relaxed">
-              I focus on turning complex workflows—from automated university schedule scrapers to clinical AI diagnostic pipelines—into fast, intuitive, user-centered products designed in Figma and shipped to production.
+              I enjoy turning real-world problems—from community and healthcare
+              platforms to chest X-ray diagnostic models—into responsive,
+              reliable products designed in Figma and backed by clean APIs and
+              databases.
             </p>
           </motion.div>
 
-          {/* Point 3: Hobbies */}
+          {/* Point 3: Beyond the Code */}
           <motion.div
             className="bg-slate-800/50 p-6 rounded-lg border border-slate-700 flex flex-col items-center"
             variants={itemVariants}
@@ -85,7 +91,9 @@ const About = () => {
               Beyond the Code
             </h3>
             <p className="text-slate-400 leading-relaxed">
-              When I'm away from the terminal, you'll find me playing cricket or painting. Both keep my strategic thinking sharp and feed directly into my eye for clean UI/UX design.
+              When I&apos;m away from the keyboard, you&apos;ll find me playing
+              cricket or painting. Both hobbies keep my strategic thinking sharp
+              and directly influence my eye for clean UI/UX design.
             </p>
           </motion.div>
         </motion.div>
