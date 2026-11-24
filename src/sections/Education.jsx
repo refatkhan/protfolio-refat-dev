@@ -14,6 +14,12 @@ const educationData = [
     subject: "Computer Technology",
     duration: "2017 – 2021",
   },
+  {
+    title: "SSC",
+    institution: "Shaheen School and College",
+    subject: "Secondary School Certificate",
+    duration: "2017",
+  },
 ];
 
 const TimelineItem = ({ data }) => {

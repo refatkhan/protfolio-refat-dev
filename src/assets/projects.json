@@ -46,7 +46,7 @@
       "Firebase",
       "Express",
       "MongoDB",
-      "Node js",
+      "Node.js",
       "TailwindCSS"
     ],
     "liveLink": "https://roommate-finder0.web.app/",
@@ -72,10 +72,37 @@
       "Firebase",
       "Express",
       "MongoDB",
-      "Node js",
+      "Node.js",
       "TailwindCSS"
     ],
     "liveLink": "https://food-sharing-2fa12.web.app/",
     "githubLink": "https://github.com/refatkhan/food-sharing-client"
+  },
+  {
+    "id": "omnimednet-csat",
+    "name": "OMNIMEDNET-CSAT (Chest X-Ray AI)",
+    "imageSrc": "https://placehold.co/600x400/0f172a/34d399?text=OMNIMEDNET-CSAT+AI",
+    "fallbackImage": "https://placehold.co/600x400/0f172a/34d399?text=OMNIMEDNET-CSAT+AI",
+    "icon": "BrainIcon",
+    "shortDescription": "Dual-stream hybrid CNN-Transformer deep learning framework for pleural effusion classification and 4-tier clinical severity grading.",
+    "longDescription": "Developed for clinical chest radiograph analysis on 35,663 CheXpert images, OMNIMEDNET-CSAT combines DenseNet-121 and ConvNeXt-Tiny backbones with CBAM spatial-channel attention and a Transformer encoder, paired with CLAHE preprocessing and Grad-CAM++ visual explainability for automated 4-tier severity grading.",
+    "features": [
+      "Dual-Stream Hybrid Architecture (DenseNet-121 + ConvNeXt-Tiny)",
+      "CBAM Attention & Transformer Encoder Feature Fusion",
+      "Automated 4-Tier Severity Grading (Normal, Mild, Moderate, Severe)",
+      "Grad-CAM++ Spatial Activation Mapping for Clinical Explainability",
+      "Patient-Disjoint Validation & 5-Fold Stratified Cross-Validation"
+    ],
+    "techStack": [
+      "Python",
+      "PyTorch",
+      "OpenCV",
+      "DenseNet-121",
+      "ConvNeXt",
+      "Transformer",
+      "Grad-CAM++"
+    ],
+    "liveLink": "",
+    "githubLink": "https://github.com/refatkhan"
   }
 ]
