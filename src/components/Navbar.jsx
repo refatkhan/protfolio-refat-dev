@@ -25,10 +25,14 @@ const Navbar = () => {
     if (location.pathname !== "/") {
       navigate("/");
       setTimeout(() => {
-        document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+        document
+          .getElementById(sectionId)
+          ?.scrollIntoView({ behavior: "smooth" });
       }, 100);
     } else {
-      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+      document
+        .getElementById(sectionId)
+        ?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -56,7 +60,10 @@ const Navbar = () => {
         currentSection = "";
       }
 
-      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+      if (
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 50
+      ) {
         currentSection = NAV_LINKS[NAV_LINKS.length - 1].id;
       }
 
@@ -87,9 +94,9 @@ const Navbar = () => {
             }
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
-          className="text-2xl font-bold text-emerald-400"
+          className="text-2xl font-bold tracking-tight text-slate-100"
         >
-          Dev<span className="text-slate-100">Refat</span>
+          Refat<span className="text-emerald-400">.dev</span>
         </a>
 
         {/* Desktop Menu */}

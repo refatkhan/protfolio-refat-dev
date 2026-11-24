@@ -3,7 +3,12 @@ import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { useMemo, useEffect, useState, useCallback } from "react";
 import { TypeAnimation } from "react-type-animation";
-import { FaLaptopCode, FaDownload, FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import {
+  FaLaptopCode,
+  FaDownload,
+  FaGithub,
+  FaLinkedinIn,
+} from "react-icons/fa6";
 import { HiOutlineChevronDown } from "react-icons/hi2";
 
 import img from "../assets/image.png";
@@ -50,7 +55,7 @@ const Hero = () => {
         size: { value: { min: 1, max: 3 } },
       },
     }),
-    []
+    [],
   );
 
   const [showScroll, setShowScroll] = useState(true);
@@ -89,8 +94,8 @@ const Hero = () => {
           transition={{ duration: 1, delay: 0.3 }}
         >
           <div className="relative w-60 h-60 sm:w-64 sm:h-64 md:w-80 md:h-80 flex items-center justify-center">
-            <div className="absolute inset-0 rounded-full p-1 bg-gradient-to-r from-emerald-400 via-cyan-400 to-violet-400 animate-spin-slow">
-              <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center">
+            <div className="absolute inset-0 rounded-full p-1 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 animate-spin-slow">
+              <div className="w-full h-full rounded-full bg-slate-900 flex items-center justify-center">
                 <div className="w-[90%] h-[90%] rounded-full overflow-hidden shadow-lg animate-bounce-slow">
                   <img
                     src={img}
@@ -111,7 +116,8 @@ const Hero = () => {
           transition={{ duration: 0.9 }}
         >
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-3 text-slate-100 font-sans">
-            Hi, I&apos;m <span className="text-emerald-400">Ismail Khan Refat</span>
+            Hi, I&apos;m{" "}
+            <span className="text-emerald-400">Ismail Khan Refat</span>
           </h1>
 
           <div className="text-xl sm:text-2xl lg:text-3xl font-semibold text-emerald-400 min-h-[40px] md:min-h-[48px] mb-5">
@@ -142,7 +148,9 @@ const Hero = () => {
           </div>
 
           <p className="text-slate-400 text-base sm:text-lg leading-relaxed mb-8 max-w-lg">
-            I build scalable full-stack web applications with modern JavaScript, TypeScript, and Python—and develop deep learning models for clinical medical imaging.
+            I build scalable full-stack web applications with modern JavaScript,
+            TypeScript, and Python—and develop deep learning models for clinical
+            medical imaging.
           </p>
 
           <div className="flex flex-wrap justify-center md:justify-start items-center gap-4 mb-8">
@@ -171,10 +179,16 @@ const Hero = () => {
           </div>
 
           <div className="flex items-center space-x-6">
-            <SocialIcon href="https://github.com/refatkhan" label="GitHub Profile">
+            <SocialIcon
+              href="https://github.com/refatkhan"
+              label="GitHub Profile"
+            >
               <FaGithub className="w-7 h-7" />
             </SocialIcon>
-            <SocialIcon href="https://www.linkedin.com/in/refatkhan/" label="LinkedIn Profile">
+            <SocialIcon
+              href="https://www.linkedin.com/in/refatkhan/"
+              label="LinkedIn Profile"
+            >
               <FaLinkedinIn className="w-7 h-7" />
             </SocialIcon>
           </div>
