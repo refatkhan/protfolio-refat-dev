@@ -1,123 +1,255 @@
 import { motion, AnimatePresence } from "framer-motion";
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
-    SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNextdotjs,
-    SiTailwindcss, SiBootstrap, SiExpress, SiMongodb, SiMongoose,
-    SiFirebase, SiGit, SiC, SiCplusplus, SiPostgresql, SiRedux, SiMysql
-} from 'react-icons/si';
-import { Pencil } from 'lucide-react';
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiBootstrap,
+  SiNodedotjs,
+  SiExpress,
+  SiFastapi,
+  SiMongodb,
+  SiMongoose,
+  SiPostgresql,
+  SiPrisma,
+  SiMysql,
+  SiFirebase,
+  SiPython,
+  SiPytorch,
+  SiGit,
+  SiFigma,
+  SiC,
+  SiCplusplus,
+} from "react-icons/si";
+import { Pencil } from "lucide-react";
 
-// Main Skills Component
 const Skills = () => {
-    // Data for skills, including name, icon, and category
-    const skills = [
-        { name: 'HTML', icon: <SiHtml5 className="text-orange-500" size={20} />, category: 'Frontend' },
-        { name: 'CSS', icon: <SiCss3 className="text-blue-500" size={20} />, category: 'Frontend' },
-        { name: 'Tailwind', icon: <SiTailwindcss className="text-cyan-400" size={20} />, category: 'Frontend' },
-        { name: 'Bootstrap', icon: <SiBootstrap className="text-purple-600" size={20} />, category: 'Frontend' },
-        { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400" size={20} />, category: 'Frontend' },
-        { name: 'React.js', icon: <SiReact className="text-cyan-400" size={20} />, category: 'Frontend' },
-        { name: 'Next.js', icon: <SiNextdotjs size={20} />, category: 'Frontend' },
-        { name: 'Express', icon: <SiExpress size={20} />, category: 'Backend' },
-        { name: 'MongoDB', icon: <SiMongodb className="text-green-500" size={20} />, category: 'Backend' },
-        { name: 'Mongoose', icon: <SiMongoose className="text-red-700" size={20} />, category: 'Backend' },
-        { name: 'Firebase', icon: <SiFirebase className="text-yellow-500" size={20} />, category: 'Backend' },
-        { name: 'MySQL', icon: <SiMysql className="text-sky-500" size={20} />, category: 'Backend' },
-        { name: 'Git', icon: <SiGit className="text-orange-600" size={20} />, category: 'Tools' },
-        { name: 'C', icon: <SiC className="text-blue-600" size={20} />, category: 'Tools' },
-        { name: 'C++', icon: <SiCplusplus className="text-blue-700" size={20} />, category: 'Tools' },
-    ];
+  const skills = [
+    // Frontend
+    {
+      name: "HTML",
+      icon: <SiHtml5 className="text-orange-500" size={20} />,
+      category: "Frontend",
+    },
+    {
+      name: "CSS",
+      icon: <SiCss3 className="text-blue-500" size={20} />,
+      category: "Frontend",
+    },
+    {
+      name: "Tailwind CSS",
+      icon: <SiTailwindcss className="text-cyan-400" size={20} />,
+      category: "Frontend",
+    },
+    {
+      name: "Bootstrap",
+      icon: <SiBootstrap className="text-purple-500" size={20} />,
+      category: "Frontend",
+    },
+    {
+      name: "JavaScript",
+      icon: <SiJavascript className="text-yellow-400" size={20} />,
+      category: "Frontend",
+    },
+    {
+      name: "TypeScript",
+      icon: <SiTypescript className="text-blue-400" size={20} />,
+      category: "Frontend",
+    },
+    {
+      name: "React.js",
+      icon: <SiReact className="text-cyan-400" size={20} />,
+      category: "Frontend",
+    },
+    {
+      name: "Next.js",
+      icon: <SiNextdotjs className="text-white" size={20} />,
+      category: "Frontend",
+    },
 
-    const categories = ['All', 'Frontend', 'Backend', 'Tools'];
-    const [activeCategory, setActiveCategory] = useState('All');
-    const filteredSkills = skills.filter(skill => activeCategory === 'All' || skill.category === activeCategory);
+    // Backend & Databases
+    {
+      name: "Node.js",
+      icon: <SiNodedotjs className="text-green-500" size={20} />,
+      category: "Backend",
+    },
+    {
+      name: "Express",
+      icon: <SiExpress className="text-white" size={20} />,
+      category: "Backend",
+    },
+    {
+      name: "FastAPI",
+      icon: <SiFastapi className="text-teal-400" size={20} />,
+      category: "Backend",
+    },
+    {
+      name: "PostgreSQL",
+      icon: <SiPostgresql className="text-sky-400" size={20} />,
+      category: "Backend",
+    },
+    {
+      name: "Prisma",
+      icon: <SiPrisma className="text-slate-200" size={20} />,
+      category: "Backend",
+    },
+    {
+      name: "MongoDB",
+      icon: <SiMongodb className="text-green-500" size={20} />,
+      category: "Backend",
+    },
+    {
+      name: "Mongoose",
+      icon: <SiMongoose className="text-red-500" size={20} />,
+      category: "Backend",
+    },
+    {
+      name: "MySQL",
+      icon: <SiMysql className="text-sky-500" size={20} />,
+      category: "Backend",
+    },
+    {
+      name: "Firebase",
+      icon: <SiFirebase className="text-yellow-500" size={20} />,
+      category: "Backend",
+    },
 
-    // Animation variants for the container of the skills grid
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1, // Stagger the animation of children
-            },
-        },
-    };
+    // AI & Languages
+    {
+      name: "Python",
+      icon: <SiPython className="text-yellow-300" size={20} />,
+      category: "AI & Languages",
+    },
+    {
+      name: "PyTorch",
+      icon: <SiPytorch className="text-orange-500" size={20} />,
+      category: "AI & Languages",
+    },
+    {
+      name: "C",
+      icon: <SiC className="text-blue-500" size={20} />,
+      category: "AI & Languages",
+    },
+    {
+      name: "C++",
+      icon: <SiCplusplus className="text-blue-600" size={20} />,
+      category: "AI & Languages",
+    },
 
-    // Animation variants for each individual skill item
-    const itemVariants = {
-        hidden: { y: 20, opacity: 0 },
-        visible: { y: 0, opacity: 1 },
-        exit: { y: -20, opacity: 0 } // Define exit animation
-    };
+    // Tools
+    {
+      name: "Git",
+      icon: <SiGit className="text-orange-600" size={20} />,
+      category: "Tools",
+    },
+    {
+      name: "Figma",
+      icon: <SiFigma className="text-pink-500" size={20} />,
+      category: "Tools",
+    },
+  ];
 
-    return (
-        <section id="skills" className="bg-[#0c0c0c] w-full flex items-center justify-center font-sans relative overflow-hidden py-24">
-            <div className="absolute inset-0 bg-[radial-gradient(#222_1px,transparent_1px)] [background-size:20px_20px] opacity-50"></div>
-            <div className="w-full max-w-6xl px-6 mx-auto z-10">
+  const categories = ["All", "Frontend", "Backend", "AI & Languages", "Tools"];
+  const [activeCategory, setActiveCategory] = useState("All");
 
-                {/* Animate the heading */}
-                <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.5 }}
-                    transition={{ duration: 0.6 }}
-                >
-                    <div className="flex items-center gap-2 mb-4">
-                        <div className="bg-gray-800 border border-gray-700 rounded-md p-1.5 inline-flex">
-                            <Pencil size={16} className="text-gray-400" />
-                        </div>
-                        <p className="text-gray-400 text-sm font-medium tracking-wider">SKILLS</p>
-                    </div>
-                    <h1 className="text-5xl md:text-6xl font-bold text-white mb-8">
-                        My <span className="text-emerald-400">Skills</span>
-                    </h1>
-                </motion.div>
+  const filteredSkills = skills.filter(
+    (skill) => activeCategory === "All" || skill.category === activeCategory,
+  );
 
-                <div className="flex flex-wrap gap-3 mb-10">
-                    {categories.map(category => (
-                        <button
-                            key={category}
-                            onClick={() => setActiveCategory(category)}
-                            className={`px-5 py-2 text-sm rounded-full transition-all duration-300 ease-in-out font-medium
-                                ${activeCategory === category
-                                    ? 'bg-emerald-400 text-black shadow-[0_0_20px_rgba(52,211,153,0.6)]'
-                                    : 'bg-gray-800/60 border border-gray-700 text-gray-300 hover:bg-gray-700/80'
-                                }`}
-                        >
-                            {category}
-                        </button>
-                    ))}
-                </div>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08,
+      },
+    },
+  };
 
-                {/* Animate the grid container */}
-                <motion.div
-                    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.2 }}
-                >
-                    {/* AnimatePresence handles the enter/exit animations of items */}
-                    <AnimatePresence>
-                        {filteredSkills.map(skill => (
-                            <motion.div
-                                key={skill.name}
-                                variants={itemVariants}
-                                initial="hidden"
-                                animate="visible"
-                                exit="exit"
-                                layout // Animate layout changes
-                                className="flex items-center justify-center sm:justify-start gap-3 bg-gray-800/60 border border-gray-700 rounded-full px-4 py-2.5 cursor-pointer hover:bg-gray-700/80 hover:border-emerald-400 transition-colors duration-300"
-                            >
-                                {skill.icon}
-                                <span className="text-gray-200 text-sm font-medium">{skill.name}</span>
-                            </motion.div>
-                        ))}
-                    </AnimatePresence>
-                </motion.div>
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+    exit: { y: -20, opacity: 0 },
+  };
+
+  return (
+    <section
+      id="skills"
+      className="w-full flex items-center justify-center font-sans relative overflow-hidden py-20 md:py-32"
+    >
+      <div className="w-full max-w-6xl px-6 mx-auto z-10">
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="flex items-center gap-2 mb-4">
+            <div className="bg-slate-800/80 border border-slate-700 rounded-md p-1.5 inline-flex">
+              <Pencil size={16} className="text-emerald-400" />
             </div>
-        </section>
-    );
+            <p className="text-slate-400 text-sm font-medium tracking-wider">
+              SKILLS &amp; TECH STACK
+            </p>
+          </div>
+          <h2 className="text-3xl md:text-5xl font-bold text-slate-100 mb-8">
+            My <span className="text-emerald-400">Skills</span>
+          </h2>
+        </motion.div>
+
+        {/* Category Filter Buttons */}
+        <div className="flex flex-wrap gap-3 mb-10">
+          {categories.map((category) => (
+            <button
+              key={category}
+              type="button"
+              onClick={() => setActiveCategory(category)}
+              className={`px-5 py-2 text-sm rounded-full transition-all duration-300 ease-in-out font-medium cursor-pointer ${
+                activeCategory === category
+                  ? "bg-emerald-400 text-black shadow-[0_0_20px_rgba(52,211,153,0.6)]"
+                  : "bg-slate-800/60 border border-slate-700 text-slate-300 hover:bg-slate-700/80"
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
+        {/* Skills Grid */}
+        <motion.div
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <AnimatePresence mode="popLayout">
+            {filteredSkills.map((skill) => (
+              <motion.div
+                key={skill.name}
+                variants={itemVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                layout
+                className="flex items-center justify-center sm:justify-start gap-3 bg-slate-800/60 border border-slate-700 rounded-full px-4 py-2.5 cursor-pointer hover:bg-slate-700/80 hover:border-emerald-400 transition-colors duration-300"
+              >
+                {skill.icon}
+                <span className="text-slate-200 text-sm font-medium">
+                  {skill.name}
+                </span>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
+      </div>
+    </section>
+  );
 };
 
 export default Skills;
