@@ -2,6 +2,7 @@
   {
     "id": "medical-camp",
     "name": "Medical Camp Management",
+    "category": "Full-Stack",
     "imageSrc": "https://i.ibb.co/8gHtsBWM/medical-camp.png",
     "fallbackImage": "https://placehold.co/600x400/0f172a/34d399?text=Medical+Camp",
     "icon": "MedicalIcon",
@@ -29,6 +30,7 @@
   {
     "id": "sharenest",
     "name": "Roommate Finder (ShareNest)",
+    "category": "Full-Stack",
     "imageSrc": "https://i.ibb.co/mVq6fs1S/roommate-finder.png",
     "fallbackImage": "https://placehold.co/600x400/0f172a/34d399?text=ShareNest",
     "icon": "HouseIcon",
@@ -55,6 +57,7 @@
   {
     "id": "food-sharing",
     "name": "FoodSharing Platform",
+    "category": "Full-Stack",
     "imageSrc": "https://i.ibb.co/7xJFDD87/foodshare.png",
     "fallbackImage": "https://placehold.co/600x400/0f172a/34d399?text=FoodSharing",
     "icon": "FoodIcon",
@@ -81,6 +84,7 @@
   {
     "id": "omnimednet-csat",
     "name": "OMNIMEDNET-CSAT (Chest X-Ray AI)",
+    "category": "AI / ML",
     "imageSrc": "https://placehold.co/600x400/0f172a/34d399?text=OMNIMEDNET-CSAT+AI",
     "fallbackImage": "https://placehold.co/600x400/0f172a/34d399?text=OMNIMEDNET-CSAT+AI",
     "icon": "BrainIcon",
