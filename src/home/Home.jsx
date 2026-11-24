@@ -1,34 +1,31 @@
-import React from 'react';
-import Hero from '../sections/Hero';
-import About from '../sections/About';
-import Projects from '../sections/Projects';
-import Navbar from '../components/Navbar';
-import Footer from '../sections/Footer';
-import Skills from '../sections/Skills';
-import Education from '../sections/Education';
-import Contact from '../sections/Contact';
+import React from "react";
+import { Helmet } from "@dr.pogodin/react-helmet";
+import Hero from "../sections/Hero";
+import About from "../sections/About";
+import Projects from "../sections/Projects";
+import Skills from "../sections/Skills";
+import Education from "../sections/Education";
+import Contact from "../sections/Contact";
 
 const Home = () => {
-    return (
-        <div className="relative min-h-screen w-full font-sans overflow-hidden bg-[#0c0c0c] flex flex-col">
-            {/* ✅ Dotted Background behind entire page */}
-            <div className="fixed inset-0 bg-[radial-gradient(#222_1px,transparent_1px)] [background-size:20px_20px] opacity-50 pointer-events-none"></div>
+  return (
+    <>
+      <Helmet>
+        <title>Ismail Khan Refat | Full-Stack Developer & AI Researcher</title>
+        <meta
+          name="description"
+          content="Portfolio of Ismail Khan Refat — Full-Stack Web Developer (React, Next.js, Node.js, FastAPI) and Deep Learning Researcher specializing in medical imaging."
+        />
+      </Helmet>
 
-            {/* ✅ Foreground Content */}
-            <div className="relative z-10 flex flex-col min-h-screen">
-                <Navbar />
-                <main className="flex-grow">
-                    <Hero />
-                    <About />
-                    <Projects />
-                    <Skills />
-                    <Education />
-                    <Contact />
-                </main>
-                <Footer />
-            </div>
-        </div>
-    );
+      <Hero />
+      <About />
+      <Projects />
+      <Skills />
+      <Education />
+      <Contact />
+    </>
+  );
 };
 
 export default Home;
